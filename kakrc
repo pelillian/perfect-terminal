@@ -1,3 +1,4 @@
+map global normal <c-r> 'U'
 colorscheme gruvbox
 set-option global scrolloff 99999,3
 
