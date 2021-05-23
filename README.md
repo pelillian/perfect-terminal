@@ -1,1 +1,1 @@
-# Show me a better `.kakrc`&mdash;I dare you!
+# Show me a better `.tmux.conf`&mdash;I dare you!
