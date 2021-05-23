@@ -13,8 +13,8 @@ gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
 gsettings set org.gnome.shell.extensions.dash-to-dock multi-monitor true
 gsettings set org.gnome.desktop.background show-desktop-icons false
 
-sudo apt install htop
-sudo apt install tree
+sudo apt install htop tree kakoune
 
 # Case-insensitive tab completion
 echo 'set completion-ignore-case On' | sudo tee -a /etc/inputrc
+

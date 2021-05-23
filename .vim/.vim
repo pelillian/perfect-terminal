@@ -1,1 +1,1 @@
-/home/plillian/Git/randomtools/perfect-terminal/.vim
+/home/peter/git/perfect-terminal/.vim
