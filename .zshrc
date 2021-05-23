@@ -117,7 +117,7 @@ bindkey "^S" history-incremental-search-forward
 # disable globbing for pip so that pip install gym[atari] works
 alias pip='noglob pip'
 
-export VISUAL=vim
+export VISUAL=kak
 autoload edit-command-line; zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 

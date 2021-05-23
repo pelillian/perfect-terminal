@@ -1,1 +1,1 @@
-# Show me a better `.vimrc`&mdash;I dare you!
+# Show me a better `.kakrc`&mdash;I dare you!
