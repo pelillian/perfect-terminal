@@ -1,0 +1,6 @@
+# vi bindings in python shell
+set editing-mode vi
+# Case-insensitive tab completion
+$include /etc/inputrc
+set completion-ignore-case On
+

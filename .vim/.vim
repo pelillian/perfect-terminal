@@ -1,0 +1,1 @@
+/home/plillian/Git/randomtools/perfect-terminal/.vim
