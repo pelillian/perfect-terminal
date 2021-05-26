@@ -18,3 +18,7 @@ sudo apt install htop tree kakoune
 # Case-insensitive tab completion
 echo 'set completion-ignore-case On' | sudo tee -a /etc/inputrc
 
+sudo apt-get install -y software-properties-common
+sudo add-apt-repository ppa:jgmath2000/et
+sudo apt-get update
+sudo apt-get install et
