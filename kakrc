@@ -6,6 +6,9 @@ map global normal <a-P> 'Oimport pdb; pdb.set_trace()<esc>'
 colorscheme gruvbox
 set-option global scrolloff 99999,3
 
+# Disable mouse
+set -add global ui_options ncurses_enable_mouse=0
+
 # Width of a tab
 set-option global tabstop 4
 # Indent with 4 spaces
