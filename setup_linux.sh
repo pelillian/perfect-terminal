@@ -13,7 +13,13 @@ gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
 gsettings set org.gnome.shell.extensions.dash-to-dock multi-monitor true
 gsettings set org.gnome.desktop.background show-desktop-icons false
 
-sudo apt install htop tree kakoune
+sudo apt install htop tree libncursesw5-dev pkg-config
+mkdir -p ~/git/kak
+cd ~/git/kak
+git clone https://github.com/mawww/kakoune.git && cd kakoune/src
+make
+PREFIX=$HOME/.local make install
+cd
 
 # Case-insensitive tab completion
 echo 'set completion-ignore-case On' | sudo tee -a /etc/inputrc
