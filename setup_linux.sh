@@ -25,6 +25,7 @@ sudo apt install ranger
 mkdir -p ~/.config/ranger/
 mv ~/.config/ranger/rc.conf ~/.config/ranger/rc.conf.old
 ln -s ~/git/perfect-terminal/rc.conf ~/.config/ranger/rc.conf
+git clone https://github.com/alfunx/ranger-colorschemes ~/.config/ranger/colorschemes/
 
 # Case-insensitive tab completion
 echo 'set completion-ignore-case On' | sudo tee -a /etc/inputrc
