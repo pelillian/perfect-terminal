@@ -1,8 +1,26 @@
+evaluate-commands %sh{
+    plugins="$kak_config/plugins"
+    mkdir -p "$plugins"
+    [ ! -e "$plugins/plug.kak" ] && \
+        git clone -q https://github.com/andreyorst/plug.kak.git "$plugins/plug.kak"
+    printf "%s\n" "source '$plugins/plug.kak/rc/plug.kak'"
+}
+plug "andreyorst/plug.kak" noload
+
+plug 'delapouite/kakoune-buffers' %{
+  map global normal ^ q
+  map global normal <a-^> Q
+  map global normal <space> ': enter-user-mode -lock buffers<ret>' -docstring 'buffers'
+  map global normal q ': enter-user-mode buffers<ret>' -docstring 'buffers'
+  map global normal Q ': info-buffers<ret>' -docstring 'buffers (lock)'
+}
+
 map global normal <c-u> 'kkkkkkkkkk'
 map global normal <c-d> 'jjjjjjjjjj'
 map global normal <c-r> 'U'
 map global normal <a-p> 'oimport pdb; pdb.set_trace()<esc>'
 map global normal <a-P> 'Oimport pdb; pdb.set_trace()<esc>'
+
 colorscheme gruvbox
 set-option global scrolloff 99999,3
 
