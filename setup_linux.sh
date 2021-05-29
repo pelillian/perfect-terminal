@@ -13,19 +13,22 @@ gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
 gsettings set org.gnome.shell.extensions.dash-to-dock multi-monitor true
 gsettings set org.gnome.desktop.background show-desktop-icons false
 
-sudo apt install htop tree libncursesw5-dev pkg-config
-mkdir -p ~/git/kak
-cd ~/git/kak
+sudo apt install -y htop tree libncursesw5-dev pkg-config
+mkdir -p ~/git/term
+cd ~/git/term
 git clone https://github.com/mawww/kakoune.git && cd kakoune/src
 make
 PREFIX=$HOME/.local make install
-cd
+cd ~/git/term
 
-sudo apt install ranger
+git clone https://github.com/ranger/ranger
+cd ranger
+sudo make install
 mkdir -p ~/.config/ranger/
 mv ~/.config/ranger/rc.conf ~/.config/ranger/rc.conf.old
 ln -s ~/git/perfect-terminal/rc.conf ~/.config/ranger/rc.conf
 git clone https://github.com/alfunx/ranger-colorschemes ~/.config/ranger/colorschemes/
+cd
 
 # Case-insensitive tab completion
 echo 'set completion-ignore-case On' | sudo tee -a /etc/inputrc

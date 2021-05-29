@@ -10,15 +10,21 @@ plug "andreyorst/plug.kak" noload
 plug 'delapouite/kakoune-buffers' %{
   map global normal ^ q
   map global normal <a-^> Q
-  map global normal <space> ': enter-user-mode -lock buffers<ret>' -docstring 'buffers'
-  map global normal Q ': enter-user-mode buffers<ret>' -docstring 'buffers'
+  map global normal <space> ': pick-buffers<ret>' -docstring 'pick-buffers'
+  map global normal <c-space> ': enter-buffers-mode<ret>' -docstring 'buffers'
   map global normal q ': info-buffers<ret>' -docstring 'buffers (lock)'
+  map global pick-buffers j ': buffer-next<ret>'             -docstring 'next →'
+  map global pick-buffers k ': buffer-previous<ret>'         -docstring 'previous ←'
+  map global buffers j ': buffer-next<ret>'             -docstring 'next →'
+  map global buffers k ': buffer-previous<ret>'         -docstring 'previous ←'
 }
 
 plug 'kakounedotcom/prelude.kak'
 plug 'kakounedotcom/connect.kak'
 require-module prelude
 require-module connect
+
+plug "andreyorst/smarttab.kak"
 
 map global normal <c-u> 'kkkkkkkkkk'
 map global normal <c-d> 'jjjjjjjjjj'
@@ -47,7 +53,7 @@ map -docstring "paste the clipboard" global user p "<a-!> xsel<ret>"
 
 # IDE
 
-declare-option -docstring 'Width of file picker in percentage of window' str ide_file_picker_width 30
+declare-option -docstring 'Width of file picker in percentage of window' str ide_file_picker_width 20
 declare-option -docstring 'File picker command' str ide_file_picker "ranger"
 
 define-command ide %{
