@@ -1,9 +1,9 @@
 evaluate-commands %sh{
-    plugins="$kak_config/plugins"
-    mkdir -p "$plugins"
-    [ ! -e "$plugins/plug.kak" ] && \
-        git clone -q https://github.com/andreyorst/plug.kak.git "$plugins/plug.kak"
-    printf "%s\n" "source '$plugins/plug.kak/rc/plug.kak'"
+  plugins="$kak_config/plugins"
+  mkdir -p "$plugins"
+  [ ! -e "$plugins/plug.kak" ] && \
+      git clone -q https://github.com/andreyorst/plug.kak.git "$plugins/plug.kak"
+  printf "%s\n" "source '$plugins/plug.kak/rc/plug.kak'"
 }
 plug "andreyorst/plug.kak" noload
 
@@ -26,11 +26,26 @@ require-module connect
 
 plug "andreyorst/smarttab.kak"
 
+plug "evanrelf/byline.kak" config %{
+   require-module "byline"
+}
+
 map global normal <c-u> 'kkkkkkkkkk'
 map global normal <c-d> 'jjjjjjjjjj'
 map global normal <c-r> 'U'
 map global normal <a-p> 'oimport pdb; pdb.set_trace()<esc>'
 map global normal <a-P> 'Oimport pdb; pdb.set_trace()<esc>'
+
+# Line numbers
+define-command linenums-on %{
+  add-highlighter global/ number-lines -hlcursor
+  map global normal <c-n> ':linenums-off<ret>'
+}
+define-command linenums-off %{
+  remove-highlighter global/number-lines_-hlcursor
+  map global normal <c-n> ':linenums-on<ret>'
+}
+linenums-on
 
 colorscheme gruvbox
 set-option global scrolloff 99999,3
@@ -42,8 +57,7 @@ set -add global ui_options ncurses_enable_mouse=0
 set-option global tabstop 4
 # Indent with 4 spaces
 set-option global indentwidth 4
-# Line numbers
-add-highlighter global/ number-lines -hlcursor
+
 # Highlight trailing whitespace
 add-highlighter global/ regex \h+$ 0:Error
 # Clipboard management mappings
