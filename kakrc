@@ -12,7 +12,9 @@ plug 'delapouite/kakoune-buffers' %{
   map global normal <a-^> Q
   map global normal <space> ': pick-buffers<ret>' -docstring 'pick-buffers'
   map global normal <c-space> ': enter-buffers-mode<ret>' -docstring 'buffers'
-  map global normal q ': info-buffers<ret>' -docstring 'buffers (lock)'
+  map global normal <c-`> ': enter-buffers-mode<ret>' -docstring 'buffers'
+  map global normal q '<space>'
+  map global normal <c-q> '<c-space>'
   map global pick-buffers j ': buffer-next<ret>'             -docstring 'next →'
   map global pick-buffers k ': buffer-previous<ret>'         -docstring 'previous ←'
   map global buffers j ': buffer-next<ret>'             -docstring 'next →'
