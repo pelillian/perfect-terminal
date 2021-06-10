@@ -26,7 +26,17 @@ plug 'kakounedotcom/connect.kak'
 require-module prelude
 require-module connect
 
-plug "andreyorst/smarttab.kak"
+plug "andreyorst/smarttab.kak" defer smarttab %{
+    # when `backspace' is pressed, 4 spaces are deleted at once
+    set-option global softtabstop 4
+} config %{
+    # these languages will use `expandtab' behavior
+    hook global WinSetOption filetype=(python|rust|markdown|kak|lisp|scheme|sh|perl) expandtab
+    # these languages will use `noexpandtab' behavior
+    hook global WinSetOption filetype=(makefile|gas) noexpandtab
+    # these languages will use `smarttab' behavior
+    hook global WinSetOption filetype=(c|cpp) smarttab
+}
 
 plug "evanrelf/byline.kak" config %{
    require-module "byline"
@@ -37,6 +47,9 @@ map global normal <c-d> 'jjjjjjjjjj'
 map global normal <c-r> 'U'
 map global normal <a-p> 'oimport pdb; pdb.set_trace()<esc>'
 map global normal <a-P> 'Oimport pdb; pdb.set_trace()<esc>'
+
+map global normal <a-n> 'N'
+map global normal N '<a-n>'
 
 # Line numbers
 define-command linenums-on %{
