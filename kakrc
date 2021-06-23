@@ -82,7 +82,7 @@ map -docstring "paste the clipboard" global user p "<a-!> xsel<ret>"
 
 # IDE
 
-declare-option -docstring 'Width of file picker in percentage of window' str ide_file_picker_width 20
+declare-option -docstring 'Width of file picker in percentage of window' str ide_file_picker_width 25
 declare-option -docstring 'File picker command' str ide_file_picker "ranger"
 
 define-command ide %{
