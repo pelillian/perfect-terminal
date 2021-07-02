@@ -94,3 +94,6 @@ ide-file-picker <program> [<arguments>]: open file picker panel' \
 %{
     tmux-terminal-impl "split-window -hb -p %opt{ide_file_picker_width}" %arg{@}
 }
+
+set-option global plug_always_ensure 'true'
+
