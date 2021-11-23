@@ -16,9 +16,10 @@ gsettings set org.gnome.desktop.background show-desktop-icons false
 sudo apt install -y htop tree libncursesw5-dev pkg-config
 mkdir -p ~/git/term
 cd ~/git/term
-git clone https://github.com/mawww/kakoune.git && cd kakoune/src
-make
-PREFIX=$HOME/.local make install
+git clone https://github.com/mawww/kakoune.git
+cd kakoune
+make || make -stdlib=libc++
+PREFIX=$HOME/.local make install || (PREFIX=$HOME/.local make install -stdlib=libc++ && PREFIX=$HOME/.local make install)
 cd ~/git/term
 
 git clone https://github.com/ranger/ranger
