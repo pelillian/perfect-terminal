@@ -10,3 +10,4 @@ echo "bind "^R" em-inc-search-prev" >> ~/.editrc
 echo "set completion-ignore-case On" >> ~/.editrc
 defaults write NSGlobalDomain KeyRepeat -int 1
 
+brew install editorconfig
