@@ -43,6 +43,13 @@ plug "evanrelf/byline.kak" config %{
    require-module "byline"
 }
 
+plug "andreyorst/base16-gruvbox.kak" noload do %{
+    mkdir -p $HOME/.config/kak/colors
+    find $PWD -type f -name "*.kak" -exec ln -sf {} $HOME/.config/kak/colors/ \;
+} config %{
+    colorscheme base16-gruvbox-dark-medium # or any other variant
+}
+
 map global normal <c-u> 'kkkkkkkkkk'
 map global normal <c-d> 'jjjjjjjjjj'
 map global normal <c-r> 'U'
@@ -63,7 +70,6 @@ define-command linenums-off %{
 }
 linenums-on
 
-colorscheme gruvbox
 set-option global scrolloff 99999,3
 
 # Disable mouse

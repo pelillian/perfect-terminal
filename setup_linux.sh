@@ -14,12 +14,14 @@ gsettings set org.gnome.shell.extensions.dash-to-dock multi-monitor true
 gsettings set org.gnome.desktop.background show-desktop-icons false
 
 sudo apt install -y htop tree libncursesw5-dev pkg-config
+sudo apt install -y gcc-10 g++-10 libc++-dev
 mkdir -p ~/git/term
 cd ~/git/term
 git clone https://github.com/mawww/kakoune.git
-cd kakoune
-make || make -stdlib=libc++
-PREFIX=$HOME/.local make install || (PREFIX=$HOME/.local make install -stdlib=libc++ && PREFIX=$HOME/.local make install)
+cd kakoune/src/
+make CC=g++-10 CXX=g++-10
+sudo make CC=g++-10 CXX=g++-10 install
+sudo ln -sf /usr/local/libexec/kak/kak /home/plillian/.local/bin/kak
 cd ~/git/term
 
 git clone https://github.com/ranger/ranger
