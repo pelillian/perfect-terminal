@@ -74,6 +74,7 @@ set-option global scrolloff 99999,3
 
 # Disable mouse
 set -add global ui_options ncurses_enable_mouse=0
+set -add global ui_options terminal_enable_mouse=false
 
 # Width of a tab
 set-option global tabstop 4
