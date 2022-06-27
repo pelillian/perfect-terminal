@@ -50,6 +50,8 @@ plug "andreyorst/base16-gruvbox.kak" noload do %{
     colorscheme base16-gruvbox-dark-medium # or any other variant
 }
 
+plug "matthias-margush/tug"
+
 map global normal <c-u> 'kkkkkkkkkk'
 map global normal <c-d> 'jjjjjjjjjj'
 map global normal <c-r> 'U'
