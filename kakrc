@@ -54,6 +54,8 @@ plug "matthias-margush/tug"
 
 map global normal <c-u> 'kkkkkkkkkk'
 map global normal <c-d> 'jjjjjjjjjj'
+map global normal <c-s-u> 'KKKKKKKKKK'
+map global normal <c-s-d> 'JJJJJJJJJJ'
 map global normal <c-r> 'U'
 map global normal <a-p> 'oimport pdb; pdb.set_trace()<esc>'
 map global normal <a-P> 'Oimport pdb; pdb.set_trace()<esc>'
