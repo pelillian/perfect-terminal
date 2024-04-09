@@ -11,3 +11,5 @@ echo "set completion-ignore-case On" >> ~/.editrc
 defaults write NSGlobalDomain KeyRepeat -int 1
 
 brew install editorconfig
+
+defaults write com.apple.Finder AppleShowAllFiles true
