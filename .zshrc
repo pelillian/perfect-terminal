@@ -134,3 +134,6 @@ setopt noautomenu
 setopt nomenucomplete
 
 alias .="source"
+
+alias pip='noglob pip'
+alias pip3='noglob pip3'
