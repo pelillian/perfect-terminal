@@ -109,3 +109,5 @@ ide-file-picker <program> [<arguments>]: open file picker panel' \
 
 hook global BufOpenFile .* editorconfig-load
 hook global BufNewFile .* editorconfig-load
+
+set global ui_options ncurses_set_title=false
