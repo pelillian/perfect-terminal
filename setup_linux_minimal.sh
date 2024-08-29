@@ -1,5 +1,5 @@
-mkdir -p ~/.config/kak/
-ln -s ~/git/perfect-terminal/kakrc ~/.config/kak/kakrc
+mkdir -p ~/.config/helix/
+ln -s ~/git/perfect-terminal/helix.config.toml ~/.config/helix/config.toml
 ln -s ~/git/perfect-terminal/.tmux.conf ~/.tmux.conf
 ln -s ~/git/perfect-terminal/.inputrc ~/.inputrc
 touch ~/.bashrc
