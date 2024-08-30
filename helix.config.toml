@@ -2,3 +2,16 @@
 true-color = true
 mouse = false
 scrolloff = 99999
+
+[editor.lsp]
+display-messages = true
+
+[keys.normal]
+X = "extend_line_above"
+
+[keys.normal.g]
+k = "goto_file_start"
+j = "goto_file_end"
+
+[keys.normal.space]
+d = ":buffer-close"
