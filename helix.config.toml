@@ -8,6 +8,7 @@ display-messages = true
 
 [keys.normal]
 X = "extend_line_above"
+C-space = "buffer_picker"
 
 [keys.normal.g]
 k = "goto_file_start"
