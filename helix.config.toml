@@ -6,9 +6,15 @@ scrolloff = 99999
 [editor.lsp]
 display-messages = true
 
+[editor.gutters]
+layout = ["diff", "diagnostics", "line-numbers", "spacer"]
+
 [keys.normal]
 X = "extend_line_above"
 C-space = "buffer_picker"
+C-n = ':set gutters.layout ["diff","diagnostics","line-numbers","spacer"]'
+C-A-n = ':set gutters.layout []'
+# A-p = ["goto_line_end_newline", ":append-output printf 'import pdb; pdb.set_trace()'", "move_char_right", "insert_newline"]
 
 [keys.normal.g]
 k = "goto_file_start"
