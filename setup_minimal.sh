@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 mkdir -p ~/.config/helix/
 ln -s ~/git/perfect-terminal/helix.config.toml ~/.config/helix/config.toml
 ln -s ~/git/perfect-terminal/.tmux.conf ~/.tmux.conf

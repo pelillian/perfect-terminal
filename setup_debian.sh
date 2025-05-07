@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 sudo apt update
 mkdir -p ~/.config/kak/
 ln -s ~/git/perfect-terminal/kakrc ~/.config/kak/kakrc
