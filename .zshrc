@@ -117,7 +117,7 @@ bindkey "^S" history-incremental-search-forward
 # disable globbing for pip so that pip install gym[atari] works
 alias pip='noglob pip'
 
-export VISUAL=kak
+export VISUAL=hx
 autoload edit-command-line; zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
@@ -137,3 +137,5 @@ alias .="source"
 
 alias pip='noglob pip'
 alias pip3='noglob pip3'
+
+function gic { git commit -m "$*"; }

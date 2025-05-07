@@ -8,3 +8,5 @@ export VISUAL=hx
 stty -ixon
 
 alias pytree="tree -I '__pycache__'"
+
+function gic { git commit -m "$*"; }
