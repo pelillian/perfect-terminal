@@ -23,3 +23,10 @@ j = "goto_file_end"
 
 [keys.normal.space]
 d = ":buffer-close"
+
+# match tag
+# cursor must be on the tag
+[keys.normal.m.t]
+t = "@ma<<><A-o>" # match tag
+s = "@ma<<><A-o><A-;>;ma<<>" # match tag start
+e = "@ma<<><A-o>;ma<<>" # match tag end
