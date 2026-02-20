@@ -1,13 +1,19 @@
 -- Pull in the wezterm API
 local wezterm = require 'wezterm'
 
+wezterm.font("UbuntuMono Nerd Font", {weight="Regular", stretch="Normal", style="Normal"})
+
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
 config.initial_cols = 160
 config.initial_rows = 40
 
+config.font = wezterm.font('UbuntuMono Nerd Font')
+config.font_size = 14
+config.line_height = 1.4
 config.window_decorations = 'INTEGRATED_BUTTONS|RESIZE'
+config.enable_tab_bar = false
 config.window_padding = {
   left = 80,
   right = 80,
@@ -67,6 +73,7 @@ config.colors = {
     '#FFFFFF',
   },
 }
+
 
 return config
 

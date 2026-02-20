@@ -139,3 +139,4 @@ alias pip='noglob pip'
 alias pip3='noglob pip3'
 
 function gic { git commit -m "$*"; }
+eval "$(starship init zsh)"
