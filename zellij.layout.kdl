@@ -1,0 +1,12 @@
+// Default zellij layout for this repo: the compact bar sits on TOP.
+// (Bar position is set by pane order in the layout — first pane = top.)
+//
+// Referenced by zellij.config.kdl via `default_layout "compact-top"`. The
+// setup scripts symlink this file to ~/.config/zellij/layouts/compact-top.kdl.
+layout {
+    // Bar first => rendered at the top of the screen.
+    pane size=1 borderless=true {
+        plugin location="compact-bar"
+    }
+    pane
+}

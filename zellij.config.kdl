@@ -194,8 +194,9 @@ scroll_buffer_size 20000
 // Use the login shell, same as tmux (set-option -g default-shell $SHELL).
 // default_shell "$SHELL"
 
-// Put the status bar at the bottom (tmux: status-position bottom).
-default_layout "compact"
+// Put the status/tab bar at the TOP via a custom layout (see
+// zellij.layout.kdl, symlinked to ~/.config/zellij/layouts/compact-top.kdl).
+default_layout "compact-top"
 
 // A theme that works on the default/transparent background like our tmux
 // status-style (bg=default). Override freely.
