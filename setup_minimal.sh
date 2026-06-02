@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
 mkdir -p ~/.config/helix/
+mkdir -p ~/.config/zellij/
 ln -s ~/git/perfect-terminal/helix.config.toml ~/.config/helix/config.toml
+ln -s ~/git/perfect-terminal/zellij.config.kdl ~/.config/zellij/config.kdl
 ln -s ~/git/perfect-terminal/.tmux.conf ~/.tmux.conf
 ln -s ~/git/perfect-terminal/.inputrc ~/.inputrc
 touch ~/.bashrc

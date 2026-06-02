@@ -2,7 +2,9 @@
 
 sudo apt update
 mkdir -p ~/.config/kak/
+mkdir -p ~/.config/zellij/
 ln -s ~/git/perfect-terminal/kakrc ~/.config/kak/kakrc
+ln -s ~/git/perfect-terminal/zellij.config.kdl ~/.config/zellij/config.kdl
 ln -s ~/git/perfect-terminal/.tmux.conf ~/.tmux.conf
 ln -s ~/git/perfect-terminal/.inputrc ~/.inputrc
 touch ~/.bashrc
