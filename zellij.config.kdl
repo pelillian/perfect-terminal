@@ -7,7 +7,8 @@
 //   Ctrl a 1..9     go to tab N             Ctrl a x        close pane
 //   Ctrl a ,        rename tab              Ctrl a &        close tab
 //   Ctrl a z        zoom (fullscreen)       Ctrl a [        scroll/copy mode
-//   Ctrl a h/j/k/l  move focus              Ctrl a d        detach
+//   Ctrl a /        search scrollback       Ctrl a d        detach
+//   Ctrl a h/j/k/l  move focus
 //   Ctrl a o        next pane               Ctrl a space    next layout
 //   Ctrl a Ctrl a   send a literal Ctrl a   Ctrl a r        resize mode
 //   Ctrl a v        toggle pane sync        Ctrl a w        session manager
@@ -96,6 +97,8 @@ keybinds clear-defaults=true {
 		// Sub-modes reached through the prefix (these stay until you exit them).
 		bind "[" { SwitchToMode "Scroll"; }
 		bind "r" { SwitchToMode "Resize"; }
+		// Ctrl a / -> jump straight into scrollback search.
+		bind "/" { SwitchToMode "EnterSearch"; SearchInput 0; }
 	}
 
 	resize {
