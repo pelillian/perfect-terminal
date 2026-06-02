@@ -161,6 +161,10 @@ keybinds clear-defaults=true {
 		// no prefix needed.
 		bind "Shift Left" { GoToPreviousTab; }
 		bind "Shift Right" { GoToNextTab; }
+		// tmux: C-S-Left/C-S-Right swap-window -1/+1 — reorder the tab,
+		// globally, no prefix.
+		bind "Ctrl Shift Left" { MoveTab "Left"; }
+		bind "Ctrl Shift Right" { MoveTab "Right"; }
 	}
 	shared_except "normal" "locked" "tmux" {
 		bind "Enter" "Esc" { SwitchToMode "Normal"; }
