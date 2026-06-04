@@ -195,6 +195,17 @@ pane_frames false
 // tmux: set -g history-limit 20000
 scroll_buffer_size 20000
 
+// Persist sessions to disk so they auto-reload (with scrollback) after a
+// reboot/crash and can be resurrected from the session manager.
+//   - session_serialization: master switch; without it the rest is inert.
+//   - pane_viewport_serialization: also save each pane's scrollback, not
+//     just the layout, so resurrected panes come back with their history.
+//   - scrollback_lines_to_serialize: cap lines/pane written to disk (0 = all).
+//     5000 keeps dumps small vs. the 20000-line live buffer above.
+session_serialization true
+pane_viewport_serialization true
+scrollback_lines_to_serialize 5000
+
 // Use the login shell, same as tmux (set-option -g default-shell $SHELL).
 // default_shell "$SHELL"
 
