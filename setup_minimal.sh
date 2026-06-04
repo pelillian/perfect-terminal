@@ -3,8 +3,10 @@
 mkdir -p ~/.config/helix/
 mkdir -p ~/.config/zellij/layouts/
 ln -s ~/git/perfect-terminal/helix.config.toml ~/.config/helix/config.toml
-ln -s ~/git/perfect-terminal/zellij.config.kdl ~/.config/zellij/config.kdl
-ln -s ~/git/perfect-terminal/zellij.layout.kdl ~/.config/zellij/layouts/compact-top.kdl
+# zellij rewrites its config in place on auto-migration, so COPY (don't
+# symlink) to keep the repo files clean.
+cp ~/git/perfect-terminal/zellij.config.kdl ~/.config/zellij/config.kdl
+cp ~/git/perfect-terminal/zellij.layout.kdl ~/.config/zellij/layouts/compact-top.kdl
 ln -s ~/git/perfect-terminal/.tmux.conf ~/.tmux.conf
 ln -s ~/git/perfect-terminal/.inputrc ~/.inputrc
 touch ~/.bashrc
