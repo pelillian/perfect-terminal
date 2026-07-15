@@ -18,6 +18,7 @@
 //   mode-keys vi        -> vi-style hjkl scroll/navigation
 //   history-limit 20000 -> scroll_buffer_size 20000
 //   S-Left/S-Right      -> prev/next tab globally (no prefix)
+//   C-Left/C-Right      -> prev/next tab globally (no prefix)
 //   F12 keybinding off  -> Ctrl g toggles Locked mode (pass keys to a nested
 //                          session / remote multiplexer)
 //   minimal status bar  -> compact-bar, no pane frames, simplified UI
@@ -158,9 +159,9 @@ keybinds clear-defaults=true {
 		// Ctrl g -> Locked mode is the F12 nested-session toggle analog.
 		bind "Ctrl g" { SwitchToMode "locked"; }
 		// tmux: S-Left/S-Right previous/next window — switch tabs globally,
-		// no prefix needed.
-		bind "Shift Left" { GoToPreviousTab; }
-		bind "Shift Right" { GoToNextTab; }
+		// no prefix needed. Ctrl Left/Right do the same.
+		bind "Shift Left" "Ctrl Left" { GoToPreviousTab; }
+		bind "Shift Right" "Ctrl Right" { GoToNextTab; }
 		// tmux: C-S-Left/C-S-Right swap-window -1/+1 — reorder the tab,
 		// globally, no prefix.
 		bind "Ctrl Shift Left" { MoveTab "Left"; }
