@@ -1,0 +1,33 @@
+{
+  "lastChangelogVersion": "0.82.1",
+  "theme": "dark",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.6-sol",
+  "compaction": {
+    "enabled": true
+  },
+  "packages": [
+    "npm:pi-vim@0.12.1",
+    "/home/p/dev/pi-btw",
+    "/home/p/dev/pi-wakeup",
+    "../../dev/pi-ask-user"
+  ],
+  "defaultThinkingLevel": "high",
+  "hideThinkingBlock": true,
+  "outputPad": 0,
+  "piVim": {
+    "clipboardMirror": "never"
+  },
+  "dashboardPluginBridges": {
+    "dashboard-automation": "/home/p/dev/pi-agent-runtime/packages/automation-plugin/src/bridge/index.ts",
+    "dashboard-flows": "/home/p/dev/pi-agent-runtime/packages/flows-plugin/src/bridge/index.ts",
+    "dashboard-goal": "/home/p/dev/pi-agent-runtime/packages/goal-plugin/src/bridge/index.ts",
+    "dashboard-flows-anthropic-bridge": "/home/p/dev/pi-agent-runtime/packages/flows-anthropic-bridge-plugin/src/bridge/index.ts"
+  },
+  "_dashboardManagedPackages": {
+    "/home/p/dev/pi-agent-runtime/packages/automation-plugin/src/bridge/index.ts": "dashboard-automation",
+    "/home/p/dev/pi-agent-runtime/packages/flows-plugin/src/bridge/index.ts": "dashboard-flows",
+    "/home/p/dev/pi-agent-runtime/packages/goal-plugin/src/bridge/index.ts": "dashboard-goal",
+    "/home/p/dev/pi-agent-runtime/packages/flows-anthropic-bridge-plugin/src/bridge/index.ts": "dashboard-flows-anthropic-bridge"
+  }
+}
