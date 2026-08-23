@@ -2,21 +2,21 @@ onboarding = false
 
 [keys]
 prefix = "ctrl+a"
-previous_tab = "shift+left"
-next_tab = "shift+right"
-move_tab_previous = "ctrl+shift+left"
-move_tab_next = "ctrl+shift+right"
-previous_workspace = "shift+up"
-next_workspace = "shift+down"
+previous_tab = "alt+h"
+next_tab = "alt+l"
+move_tab_previous = ["ctrl+shift+left", "alt+shift+h"]
+move_tab_next = ["ctrl+shift+right", "alt+shift+l"]
+previous_workspace = "alt+k"
+next_workspace = "alt+j"
 
 [[keys.command]]
-key = "ctrl+shift+up"
+key = ["ctrl+shift+up", "alt+shift+k"]
 type = "shell"
 command = "python3 \"$HOME/git/perfect-terminal/herdr-move-workspace.py\" up"
 description = "move workspace up"
 
 [[keys.command]]
-key = "ctrl+shift+down"
+key = ["ctrl+shift+down", "alt+shift+j"]
 type = "shell"
 command = "python3 \"$HOME/git/perfect-terminal/herdr-move-workspace.py\" down"
 description = "move workspace down"
