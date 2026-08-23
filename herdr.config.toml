@@ -1,0 +1,33 @@
+onboarding = false
+
+[keys]
+prefix = "ctrl+a"
+previous_tab = "shift+left"
+next_tab = "shift+right"
+move_tab_previous = "ctrl+shift+left"
+move_tab_next = "ctrl+shift+right"
+previous_workspace = "shift+up"
+next_workspace = "shift+down"
+
+[[keys.command]]
+key = "ctrl+shift+up"
+type = "shell"
+command = "python3 \"$HOME/git/perfect-terminal/herdr-move-workspace.py\" up"
+description = "move workspace up"
+
+[[keys.command]]
+key = "ctrl+shift+down"
+type = "shell"
+command = "python3 \"$HOME/git/perfect-terminal/herdr-move-workspace.py\" down"
+description = "move workspace down"
+
+[ui]
+show_agent_labels_on_pane_borders = true
+status_indicators = "dots"
+
+[ui.toast]
+delivery = "system"
+
+[theme]
+name = "dracula"
+auto_switch = false
