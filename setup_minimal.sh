@@ -2,7 +2,7 @@
 
 mkdir -p ~/.config/helix/
 mkdir -p ~/.config/zellij/layouts/
-mkdir -p ~/.pi/agent/
+mkdir -p ~/.pi/agent/bin/
 ln -s ~/git/perfect-terminal/helix.config.toml ~/.config/helix/config.toml
 # zellij rewrites its config in place on auto-migration, so COPY (don't
 # symlink) to keep the repo files clean.
@@ -14,6 +14,7 @@ if [ -e ~/.pi/agent/settings.json ] && [ ! -L ~/.pi/agent/settings.json ]; then
   mv ~/.pi/agent/settings.json ~/.pi/agent/settings.json.old
 fi
 ln -sfn ~/git/perfect-terminal/pi-settings.json ~/.pi/agent/settings.json
+ln -sfn ~/git/perfect-terminal/bin/pi-git ~/.pi/agent/bin/git
 touch ~/.bashrc
 cat ~/git/perfect-terminal/append.bashrc >> ~/.bashrc
 

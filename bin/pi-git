@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+
+# Pi-only Git safety guard: commits must name every intended path explicitly.
+# Use /usr/bin/git to bypass this policy deliberately.
+real_git="${PI_GIT_REAL:-/usr/bin/git}"
+args=("$@")
+command_index=-1
+command_name=""
+
+# Locate the Git subcommand while accounting for global options that consume a
+# following value. This supports forms such as `git -C repo commit ...`.
+for ((index = 0; index < ${#args[@]}; index++)); do
+  argument="${args[index]}"
+  case "$argument" in
+    -C|-c|--git-dir|--work-tree|--namespace|--super-prefix|--config-env)
+      ((index += 1))
+      ;;
+    --git-dir=*|--work-tree=*|--namespace=*|--super-prefix=*|--config-env=*|--exec-path=*)
+      ;;
+    -*)
+      ;;
+    *)
+      command_index=$index
+      command_name=$argument
+      break
+      ;;
+  esac
+done
+
+if [[ "$command_name" == "commit" ]]; then
+  # Documentation queries do not create commits and remain available.
+  for ((index = command_index + 1; index < ${#args[@]}; index++)); do
+    case "${args[index]}" in
+      -h|--help)
+        exec "$real_git" "$@"
+        ;;
+    esac
+  done
+
+  has_explicit_paths=false
+  for ((index = command_index + 1; index < ${#args[@]}; index++)); do
+    if [[ "${args[index]}" == "--" && $((index + 1)) -lt ${#args[@]} ]]; then
+      has_explicit_paths=true
+      break
+    fi
+  done
+
+  if [[ "$has_explicit_paths" != true ]]; then
+    cat >&2 <<'EOF'
+ERROR: Pi Git commits require explicit filenames.
+No commit was created.
+
+Use:
+  git commit -m "message" -- path/to/file [path/to/other-file ...]
+
+To bypass this Pi-only guard deliberately, invoke /usr/bin/git directly.
+EOF
+    exit 64
+  fi
+fi
+
+exec "$real_git" "$@"
